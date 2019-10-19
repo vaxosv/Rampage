@@ -5,4 +5,4 @@ Game.lunch();
 
 document.querySelector('body').addEventListener('click', () => {
     Game.ball();
-})
+});
