@@ -1,15 +1,9 @@
 import {Game} from "./class/app";
-import * as PIXI from "pixi.js"
+import {Pixi} from "./class/pixi";
 
+const pixi = new Pixi();
 let game = new Game();
-Game.lunch();
 
 document.querySelector('body').addEventListener('click', () => {
-    // Game.ball(12, 12);
-    console.log(PIXI)
+    Game.lunch();
 });
-
-if ( game.arr.sort()){
-    console.log(11111111111)
-
-}
