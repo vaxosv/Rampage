@@ -4,17 +4,23 @@ var pixi_js_1 = require("pixi.js");
 var globals_1 = require("./globals");
 var TexT = /** @class */ (function () {
     function TexT(text) {
+        var _this = this;
         this.initialSpeed = 10;
         this.topSpeed = 30;
         this.speedvalue = 3;
         this.speed = this.speedvalue;
         this.text = new pixi_js_1.Text(text, { fill: "#fff" });
+        this.text.interactive = true;
         this.possitionX = globals_1.Width / 2 - 50;
         this.possitionY = 100;
+        this.text.on('click', function () { _this.click(); });
     }
     TexT.prototype.update = function (delta) {
         this.possitionY += delta * this.initialSpeed;
         this.reset();
+    };
+    TexT.prototype.click = function () {
+        console.log('daeklika');
     };
     TexT.prototype.reset = function () {
         if ((this.text.y) >= globals_1.Height) {
@@ -27,7 +33,6 @@ var TexT = /** @class */ (function () {
         if (this.initialSpeed <= 10) {
             this.speed = this.speedvalue;
         }
-        console.log(this.speed);
     };
     Object.defineProperty(TexT.prototype, "possitionX", {
         get: function () {

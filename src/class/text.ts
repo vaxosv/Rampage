@@ -10,13 +10,19 @@ export class TexT {
 
     constructor(text: string) {
         this.text = new Text(text, {fill: `#fff`});
+        this.text.interactive= true;
         this.possitionX = Width / 2 -50 ;
         this.possitionY = 100;
+        this.text.on('click', ()=>{this.click()})
     }
 
     update(delta: number) {
         this.possitionY += delta * this.initialSpeed;
         this.reset();
+    }
+
+    click() {
+        console.log('daeklika')
     }
 
     private reset() {
@@ -33,7 +39,6 @@ export class TexT {
             this.speed = this.speedvalue;
         }
 
-        console.log(this.speed);
     }
 
     private set possitionX(x: number) {
