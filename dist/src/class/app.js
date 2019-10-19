@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Game = /** @class */ (function () {
     function Game() {
+        this.arr = [1];
     }
     Game.lunch = function () {
         console.log("game lunched");

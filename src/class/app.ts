@@ -1,5 +1,7 @@
 export class Game {
 
+    arr: Array<number> = [1];
+
     constructor(){}
 
     static lunch(){
