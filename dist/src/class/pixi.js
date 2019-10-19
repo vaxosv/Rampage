@@ -8,6 +8,7 @@ var Pixi = /** @class */ (function () {
         });
         document.body.appendChild(app.view);
         var container = new pixi_js_1.Container();
+        app.stage.addChild(container);
     }
     return Pixi;
 }());

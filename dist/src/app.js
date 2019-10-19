@@ -1,10 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var app_1 = require("./class/app");
-var pixi_1 = require("./class/pixi");
-var pixi = new pixi_1.Pixi();
-var game = new app_1.Game();
+var pixi_js_1 = require("pixi.js");
+var text_1 = require("./class/text");
+var globals_1 = require("./class/globals");
+var app = new pixi_js_1.Application({
+    width: globals_1.Width, height: globals_1.Height, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+});
+document.body.appendChild(app.view);
+var header = new text_1.TexT('slot');
+app.stage.addChild(header.text);
+app.ticker.add(function (delta) {
+    header.update(delta);
+});
 document.querySelector('body').addEventListener('click', function () {
-    app_1.Game.lunch();
 });
 //# sourceMappingURL=app.js.map

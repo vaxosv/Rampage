@@ -1,7 +1,5 @@
 import {Application, Container} from 'pixi.js'
 
-
-
 export class Pixi {
     constructor() {
         const app = new Application({
@@ -10,5 +8,7 @@ export class Pixi {
         document.body.appendChild(app.view);
 
         const container = new Container();
+
+        app.stage.addChild(container)
     }
 }
