@@ -1,6 +1,7 @@
 import {TexT} from './class/text'
 import {Pixi} from "./class/pixi";
 import {SpritE} from "./class/sprite";
+import {Global} from './class/globals';
 
 const speed = 6;
 let stop = false;
@@ -17,28 +18,21 @@ pixi.app.stage.addChild(spell.sprite);
 
 
 // for (let i = 0; i <= 10; i++) {
-//     const header = new TexT('slot', 100 * i, 10);
 //     pixi.app.stage.addChild(header.text);
 //     arr.push(header)
 //
+//     const header = new TexT('slot', 100 * i, 10);
 // }
 console.log(pixi.app);
 pixi.app.ticker.add((delta) => {
     header.update(delta, speed);
     header2.update(delta, speed);
-    spell.update(delta, speed)
+    spell.update(delta, speed);
     // arr.forEach(item => {
     //     item.update(delta, 5)
     // })
 });
 
-document.querySelector('canvas').addEventListener('click', () => {
-    stop = !stop;
-    if (stop) {
-        pixi.app.ticker.stop();
-    } else {
-        pixi.app.ticker.start();
-    }
-})
+
 
 
