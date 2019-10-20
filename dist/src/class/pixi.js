@@ -5,7 +5,7 @@ var globals_1 = require("./globals");
 var Pixi = /** @class */ (function () {
     function Pixi() {
         this.app = new pixi_js_1.Application({
-            width: globals_1.Width, height: globals_1.Height, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+            width: globals_1.Width, height: globals_1.Height, backgroundColor: 0x2c3e50, resolution: window.devicePixelRatio || 1,
         });
         document.body.appendChild(this.app.view);
     }
