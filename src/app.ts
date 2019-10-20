@@ -1,5 +1,3 @@
-import {Application} from 'pixi.js'
-
 import {TexT} from './class/text'
 import {Pixi} from "./class/pixi";
 
