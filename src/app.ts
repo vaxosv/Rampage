@@ -1,23 +1,12 @@
-import {Application, Text} from 'pixi.js'
+import {Application} from 'pixi.js'
 
-import { TexT } from './class/text'
-import {Height, Width} from "./class/globals";
+import {TexT} from './class/text'
+import {Pixi} from "./class/pixi";
 
-const app = new Application({
-    width: Width, height: Height, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
-});
-document.body.appendChild(app.view);
-
+const pixi = new Pixi();
 const header = new TexT('slot');
-
-
-app.stage.addChild(header.text);
-
-app.ticker.add((delta)=>{
+pixi.app.stage.addChild(header.text);
+pixi.app.ticker.add((delta) => {
     header.update(delta);
 });
 
-
-document.querySelector('body').addEventListener('click', () => {
-
-});

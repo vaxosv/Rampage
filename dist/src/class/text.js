@@ -4,7 +4,6 @@ var pixi_js_1 = require("pixi.js");
 var globals_1 = require("./globals");
 var TexT = /** @class */ (function () {
     function TexT(text) {
-        var _this = this;
         this.initialSpeed = 10;
         this.topSpeed = 30;
         this.speedvalue = 3;
@@ -13,13 +12,13 @@ var TexT = /** @class */ (function () {
         this.text.interactive = true;
         this.possitionX = globals_1.Width / 2 - 50;
         this.possitionY = 100;
-        this.text.on('click', function () { _this.click(); });
+        this.text.on('click', function () { TexT.click(); });
     }
     TexT.prototype.update = function (delta) {
         this.possitionY += delta * this.initialSpeed;
         this.reset();
     };
-    TexT.prototype.click = function () {
+    TexT.click = function () {
         console.log('daeklika');
     };
     TexT.prototype.reset = function () {

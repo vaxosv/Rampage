@@ -1,14 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var pixi_js_1 = require("pixi.js");
+var globals_1 = require("./globals");
 var Pixi = /** @class */ (function () {
     function Pixi() {
-        var app = new pixi_js_1.Application({
-            width: 800, height: 600, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+        this.app = new pixi_js_1.Application({
+            width: globals_1.Width, height: globals_1.Height, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
         });
-        document.body.appendChild(app.view);
-        var container = new pixi_js_1.Container();
-        app.stage.addChild(container);
+        document.body.appendChild(this.app.view);
     }
     return Pixi;
 }());

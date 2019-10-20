@@ -13,7 +13,7 @@ export class TexT {
         this.text.interactive= true;
         this.possitionX = Width / 2 -50 ;
         this.possitionY = 100;
-        this.text.on('click', ()=>{this.click()})
+        this.text.on('click', ()=>{TexT.click()})
     }
 
     update(delta: number) {
@@ -21,7 +21,7 @@ export class TexT {
         this.reset();
     }
 
-    click() {
+    static click() {
         console.log('daeklika')
     }
 

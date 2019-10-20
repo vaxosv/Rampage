@@ -1,14 +1,12 @@
 import {Application, Container} from 'pixi.js'
+import {Height, Width} from "./globals";
 
 export class Pixi {
+    app: Application;
     constructor() {
-        const app = new Application({
-            width: 800, height: 600, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+        this.app = new Application({
+            width: Width, height: Height, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
         });
-        document.body.appendChild(app.view);
-
-        const container = new Container();
-
-        app.stage.addChild(container)
+        document.body.appendChild(this.app.view);
     }
 }
