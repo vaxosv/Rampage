@@ -1,19 +1,33 @@
 export class Game {
+    stop = false;
 
     arr: Array<number> = [1];
 
-    constructor(){}
+    constructor() {
+    }
 
-    static lunch(){
+    static lunch() {
         console.log(`game lunched`);
         this.manu();
     }
 
-    static manu(){
+    static manu() {
         console.log(`show menu`)
     }
 
-    static ball(){
+    static ball() {
         console.log(`show ball`)
     }
+
+    pause() {
+        document.querySelector('canvas').addEventListener('click', () => {
+            this.stop = !this.stop;
+            if (stop) {
+                // pixi.app.ticker.stop();
+            } else {
+                // pixi.app.ticker.start();
+            }
+        })
+    }
+
 }

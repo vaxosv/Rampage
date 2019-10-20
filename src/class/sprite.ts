@@ -1,21 +1,25 @@
-import {Text} from "pixi.js";
-import {Height, Width} from "./globals";
-import * as PIXI from "pixi.js"
+// @ts-ignore
+import * as PIXI from "pixi.js";
+import {Height} from "./globals";
+import Sprite = PIXI.Sprite;
 
-export class TexT {
-    text: PIXI.Text;
-    filter: PIXI.Filter;
+export class SpritE {
+    sprite: PIXI.Sprite;
     initialSpeed = 10;
     topSpeed = 30;
     speedvalue = 3;
     speed = this.speedvalue;
 
-    constructor( possitionX: number, posssitionY: number, text?: string,) {
-        this.text = new Text(text, {fill: `#ecf0f1`});
-        this.text.interactive= true;
+    constructor(possitionX: number, posssitionY: number){
+        // @ts-ignore
+        this.sprite = new Sprite.from('./assets/epic-potion.png');
+        this.sprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+        this.sprite.interactive= true;
+        this.sprite.scale.x = 0.1;
+        this.sprite.scale.y = 0.1;
         this.possitionX = possitionX +100 ;
         this.possitionY = posssitionY;
-        this.text.on('click', ()=>{TexT.click()})
+        // new PIXI.filters.DisplacementFilter(this.sprite);
     }
 
     update(delta: number, time: number) {
@@ -28,8 +32,8 @@ export class TexT {
     }
 
     private reset(delta: number) {
-        if ((this.text.y) >= Height) {
-            this.text.y = 0;
+        if ((this.sprite.y) >= Height) {
+            this.sprite.y = 0;
             this.initialSpeed += this.speed;
         }
 
@@ -44,20 +48,19 @@ export class TexT {
     }
 
     protected set possitionX(x: number) {
-        this.text.x = x;
+        this.sprite.x = x;
     }
 
     protected set possitionY(y: number) {
-        this.text.y = y;
+        this.sprite.y = y;
     }
 
     protected get possitionX() {
-        return this.text.x
+        return this.sprite.x
     }
 
     protected get possitionY() {
-        return this.text.y
+        return this.sprite.y
     }
-
 
 }
