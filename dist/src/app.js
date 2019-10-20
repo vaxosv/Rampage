@@ -14,10 +14,10 @@ pixi.app.stage.addChild(header.text);
 pixi.app.stage.addChild(header2.text);
 pixi.app.stage.addChild(spell.sprite);
 // for (let i = 0; i <= 10; i++) {
-//     const header = new TexT('slot', 100 * i, 10);
 //     pixi.app.stage.addChild(header.text);
 //     arr.push(header)
 //
+//     const header = new TexT('slot', 100 * i, 10);
 // }
 console.log(pixi.app);
 pixi.app.ticker.add(function (delta) {
@@ -27,14 +27,5 @@ pixi.app.ticker.add(function (delta) {
     // arr.forEach(item => {
     //     item.update(delta, 5)
     // })
-});
-document.querySelector('canvas').addEventListener('click', function () {
-    stop = !stop;
-    if (stop) {
-        pixi.app.ticker.stop();
-    }
-    else {
-        pixi.app.ticker.start();
-    }
 });
 //# sourceMappingURL=app.js.map

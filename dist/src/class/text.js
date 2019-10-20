@@ -12,7 +12,9 @@ var TexT = /** @class */ (function () {
         this.text.interactive = true;
         this.possitionX = possitionX + 100;
         this.possitionY = posssitionY;
-        this.text.on('click', function () { TexT.click(); });
+        this.text.on('click', function () {
+            TexT.click();
+        });
     }
     TexT.prototype.update = function (delta, time) {
         this.possitionY += delta * time;
@@ -31,6 +33,13 @@ var TexT = /** @class */ (function () {
         }
         if (this.initialSpeed <= 10) {
             this.speed = this.speedvalue;
+        }
+        if (this.possitionY >= (globals_1.Height / 2) - 20 && this.possitionY <= (globals_1.Height / 2) + 20) {
+            console.log('shignit');
+            globals_1.Global.Stars = true;
+        }
+        else {
+            globals_1.Global.Stars = false;
         }
     };
     Object.defineProperty(TexT.prototype, "possitionX", {
