@@ -21,7 +21,7 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
-    "acorn": "^6.1.1",
+    "acorn": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
     "lodash": "^4.17.15",
     "pixi.js": "^5.1.5"
